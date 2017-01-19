@@ -1,0 +1,1 @@
+require 'smartcore/requests/base_request'
