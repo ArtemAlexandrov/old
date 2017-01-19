@@ -3,7 +3,7 @@ module Smartcore
 
 
     def list_social_profiles(page, per_page)
-
+      #   TODO: implement this
     end
 
     def confirm_social_profile(profile_id, comment, base64doc)
@@ -15,7 +15,7 @@ module Smartcore
     end
 
     def verify_social_profile(profile_id, comment, base64doc, confirmed)
-
+      #   TODO: implement this
     end
 
 

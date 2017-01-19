@@ -1,9 +1,6 @@
 module Smartcore
   class Client
 
-    LOGIN = 'kent'
-    PASSWORD = 'Passw0rd12'
-
     def sign_in(login, password)
       Smartcore::ClientSignInRequest.new(login: login, password: password).execute
     end
@@ -13,7 +10,7 @@ module Smartcore
     end
 
     def request_token
-      sign_in(LOGIN, PASSWORD)
+      sign_in(self.login, self.password)
     end
 
   end

@@ -8,3 +8,8 @@ require 'smartcore/requests/information_requests/get_countries_with_relations_re
 require 'smartcore/requests/information_requests/get_brands_request'
 require 'smartcore/requests/information_requests/get_brands_with_relations_request'
 require 'smartcore/requests/user_profile_requests/user_profile_registration_request'
+require 'smartcore/requests/user_profile_requests/user_profile_sign_in_request'
+require 'smartcore/requests/user_profile_requests/user_profile_oauth_sign_in_request'
+require 'smartcore/requests/user_profile_requests/user_profile_request'
+require 'smartcore/requests/user_profile_requests/user_profile_update_request'
+require 'smartcore/requests/user_profile_requests/user_profiles_request'
