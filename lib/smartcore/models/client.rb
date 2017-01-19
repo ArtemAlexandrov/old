@@ -7,14 +7,6 @@ module Smartcore
       attribute :password, String
       attribute :token,    String
 
-      def sign_in
-
-      end
-
-      def sign_out
-
-      end
-
     end
   end
 end
