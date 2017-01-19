@@ -1,18 +1,20 @@
 module Smartcore
-  class CheckEmailPresenceRequest < BaseRequest
-    attribute :email,    String
+  class UserProfileRegistrationRequest < BaseRequest
+
+    include Smartcore::UserData
+
 
     def execute
       responce = execute_request_with_token
       if responce.status == success_status
-        true
+        UserProfileResponse.new(JSON.parse(responce.body))
       else
         process_error(responce)
       end
     end
 
     def path
-      router.information_check_email_path
+      router.user_create_path
     end
   end
 end

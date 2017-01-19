@@ -5,6 +5,7 @@ require 'smartcore/version'
 require 'smartcore/errors'
 require 'smartcore/models'
 require 'smartcore/responses'
+require 'smartcore/router'
 require 'smartcore/requests'
 require 'smartcore/client'
 

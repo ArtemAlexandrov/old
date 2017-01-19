@@ -11,7 +11,7 @@ module Smartcore
     end
 
     def path
-      '/countries'
+      router.information_countries_path
     end
   end
 end

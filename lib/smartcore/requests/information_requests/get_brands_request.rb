@@ -11,7 +11,7 @@ module Smartcore
     end
 
     def path
-      '/brands'
+      router.information_brands_path
     end
 
   end

@@ -13,7 +13,7 @@ module Smartcore
     end
 
     def path
-      '/auth/signout'
+      router.client_sign_out_path
     end
   end
 end

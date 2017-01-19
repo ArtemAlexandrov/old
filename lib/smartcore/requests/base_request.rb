@@ -18,6 +18,10 @@ module Smartcore
 
     private
 
+    def router
+      Smartcore::Router.new
+    end
+
     def token
       Smartcore::Client.new.request_token
     end

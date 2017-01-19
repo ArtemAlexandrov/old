@@ -9,4 +9,5 @@ require 'smartcore/models/geo_data/country'
 
 
 require 'smartcore/models/user_data/document_scan'
+require 'smartcore/concerns/user_data'
 require 'smartcore/models/user_data/user'

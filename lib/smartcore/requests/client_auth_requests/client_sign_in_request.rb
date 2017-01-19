@@ -14,7 +14,7 @@ module Smartcore
     end
 
     def path
-      '/auth/signin'
+      router.client_sign_in_path
     end
   end
 end

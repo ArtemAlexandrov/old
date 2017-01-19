@@ -12,7 +12,7 @@ module Smartcore
     end
 
     def path
-      '/brands/cigarette_skus'
+      router.information_brands_with_relations_path
     end
 
   end

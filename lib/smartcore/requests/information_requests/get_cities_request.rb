@@ -11,7 +11,7 @@ module Smartcore
     end
 
     def path
-      '/cities'
+      router.information_cities_path
     end
   end
 end

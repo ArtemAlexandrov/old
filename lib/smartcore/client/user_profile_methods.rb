@@ -6,7 +6,7 @@ module Smartcore
     end
 
     def user_profile_registration(user_params)
-
+      UserProfileRegistrationRequest.new(user_params).execute
     end
 
     def user_profile(user_token)
