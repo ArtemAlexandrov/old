@@ -1,7 +1,12 @@
 module Smartcore
   module Models
     class City < BaseModel
-      attribute :title,       String
+      attribute :name,       String
+      attribute :country_id, String
+
+      def title
+        name
+      end
     end
   end
 end
