@@ -1,16 +1,18 @@
 module Smartcore
   class Client
 
-    def brands_list(page, per_page)
+    def brands_list
+      GetBrandsRequest.new.execute
     end
 
-    def brands_with_cigarette_format_list(page, per_page)
-
+    def brand_with_relations(brand_id)
+      GetBrandsWithRelationsRequest.new(brand_id: brand_id).execute
     end
 
-    def brand_with_relations(brand_id, page, per_page)
-
+    def brands_with_relations_list
+      GetBrandsWithRelationsRequest.new.execute
     end
+
 
   end
 end
