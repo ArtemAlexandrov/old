@@ -18,15 +18,15 @@ module Smartcore
     end
 
     def user_profile_update_avatar(user_token, base64doc)
-      Smartcore::UserProfileUpdateAvatarRequest.new(user_token: user_token, avatar: base64doc)
+      Smartcore::UserProfileUpdateAvatarRequest.new(user_token: user_token, avatar: base64doc).execute
     end
 
     def user_profile_delete_request(user_token)
-      #   TODO: implement this
+      Smartcore::UserProfileDeleteRequest.new(user_token: user_token).execute
     end
 
     def delete_profile_requests_list(page, per_page)
-      #   TODO: implement this
+      Smartcore::UserProfileDeleteListRequest.new(page: page, per_page: per_page).execute
     end
 
     def delete_profile_request_confirm(request_id, profile_id)

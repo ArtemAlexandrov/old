@@ -2,11 +2,11 @@ module Smartcore
   class GetCitiesRequest < BaseRequest
 
     def execute
-      responce = execute_request
-      if responce.status == success_status
-        Smartcore::CitiesResponse.new(JSON.parse(responce.body)).cities
+      response = execute_request
+      if response.status == success_status
+        Smartcore::CitiesResponse.new(JSON.parse(response.body)).cities
       else
-        process_error(responce)
+        process_error(response)
       end
     end
 

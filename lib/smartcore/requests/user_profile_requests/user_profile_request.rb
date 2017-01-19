@@ -5,11 +5,11 @@ module Smartcore
 
 
     def execute
-      responce = execute_request_with_token
-      if responce.status == success_status
-        Smartcore::UserProfileResponse.new(JSON.parse(responce.body)).profile
+      response = execute_request_with_token
+      if response.status == success_status
+        Smartcore::UserProfileResponse.new(JSON.parse(response.body)).profile
       else
-        process_error(responce)
+        process_error(response)
       end
     end
 

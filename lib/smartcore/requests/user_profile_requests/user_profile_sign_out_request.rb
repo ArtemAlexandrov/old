@@ -4,11 +4,11 @@ module Smartcore
     attribute :user_token,    String
 
     def execute
-      responce = execute_request_with_token
-      if responce.status == success_status
+      response = execute_request_with_token
+      if response.status == success_status
         true
       else
-        process_error(responce)
+        process_error(response)
       end
     end
 

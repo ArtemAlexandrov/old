@@ -2,11 +2,11 @@ module Smartcore
   class GetBrandsRequest < BaseRequest
 
     def execute
-      responce = execute_request
-      if responce.status == success_status
-        Smartcore::BrandsResponse.new(JSON.parse(responce.body)).brands
+      response = execute_request
+      if response.status == success_status
+        Smartcore::BrandsResponse.new(JSON.parse(response.body)).brands
       else
-        process_error(responce)
+        process_error(response)
       end
     end
 

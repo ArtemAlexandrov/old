@@ -4,11 +4,11 @@ module Smartcore
     attribute :country_id,    String
 
     def execute
-      responce = execute_request
-      if responce.status == success_status
-        Smartcore::CountriesResponse.new(JSON.parse(responce.body)).countries
+      response = execute_request
+      if response.status == success_status
+        Smartcore::CountriesResponse.new(JSON.parse(response.body)).countries
       else
-        process_error(responce)
+        process_error(response)
       end
     end
 

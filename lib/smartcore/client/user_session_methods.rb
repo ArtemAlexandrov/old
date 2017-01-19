@@ -6,9 +6,9 @@ module Smartcore
     end
 
     def user_session_oauth_sign_in_url(provider, callback_url, failure_url)
-      responce = Smartcore::UserProfileOAuthSignInRequest.new(callback_url: callback_url, failure_url: failure_url).execute
-      if responce.success?
-        "#{responce.url}?provider=#{provider}"
+      response = Smartcore::UserProfileOAuthSignInRequest.new(callback_url: callback_url, failure_url: failure_url).execute
+      if response.success?
+        "#{response.url}?provider=#{provider}"
       end
     end
 

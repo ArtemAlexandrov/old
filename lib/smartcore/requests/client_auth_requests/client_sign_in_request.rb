@@ -5,11 +5,11 @@ module Smartcore
     attribute :password, String
 
     def execute
-      responce = execute_request
-      if responce.status == success_status
-        Smartcore::ClientAuthResponce.new(JSON.parse(responce.body)).token
+      response = execute_request
+      if response.status == success_status
+        Smartcore::ClientAuthResponce.new(JSON.parse(response.body)).token
       else
-        process_error(responce)
+        process_error(response)
       end
     end
 
