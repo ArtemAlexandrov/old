@@ -1,5 +1,5 @@
-require 'information_methods/geo_data'
-require 'information_methods/brand_data'
+require 'smartcore/client/information_methods/geo_data'
+require 'smartcore/client/information_methods/brand_data'
 module Smartcore
   class Client
 

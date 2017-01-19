@@ -1,12 +1,12 @@
-require 'models/base_model'
-require 'models/client'
+require 'smartcore/models/base_model'
+require 'smartcore/models/client'
 
-require 'models/brand_data/cigarette_format'
-require 'models/brand_data/brand'
+require 'smartcore/models/brand_data/cigarette_format'
+require 'smartcore/models/brand_data/brand'
 
-require 'models/geo_data/city'
-require 'models/geo_data/country'
+require 'smartcore/models/geo_data/city'
+require 'smartcore/models/geo_data/country'
 
 
-require 'models/user_data/document_scan'
-require 'models/user_data/user'
+require 'smartcore/models/user_data/document_scan'
+require 'smartcore/models/user_data/user'
