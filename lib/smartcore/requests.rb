@@ -13,3 +13,4 @@ require 'smartcore/requests/user_profile_requests/user_profile_oauth_sign_in_req
 require 'smartcore/requests/user_profile_requests/user_profile_request'
 require 'smartcore/requests/user_profile_requests/user_profile_update_request'
 require 'smartcore/requests/user_profile_requests/user_profiles_request'
+require 'smartcore/requests/user_profile_requests/user_profile_update_avatar_request'
