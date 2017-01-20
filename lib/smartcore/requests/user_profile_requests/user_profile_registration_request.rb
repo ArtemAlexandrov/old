@@ -1,8 +1,8 @@
 module Smartcore
-  class UserProfileRegistrationRequest < BaseRequest
+  class UserProfileRegistrationRequest < TokenRequest
 
     include Smartcore::UserData
-
+    attribute :password, String
 
     def execute
       response = execute_request_with_token

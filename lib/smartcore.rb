@@ -11,7 +11,12 @@ require 'smartcore/client'
 
 
 module Smartcore
+
+  def self.domain
+    'http://localhost:4000'
+  end
+
   def self.uri
-    return 'http://localhost:4000/api/v1/'
+    return "#{domain}/api/v1/"
   end
 end

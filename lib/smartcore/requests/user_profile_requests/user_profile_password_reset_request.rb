@@ -1,20 +1,20 @@
 module Smartcore
-  class UserProfileRequest < TokenRequest
+  class UserProfilePasswordResetRequest < TokenRequest
 
-    attribute :user_token, String
-
+    attribute :confirmation_token,    String
+    attribute :password,              String
 
     def execute
       response = execute_request_with_token
       if response.status == success_status
-        Smartcore::UserProfileResponse.new(JSON.parse(response.body)).profile
+        true
       else
         process_error(response)
       end
     end
 
     def path
-      router.user_profile_path
+      router.user_password_reset_path
     end
   end
 end

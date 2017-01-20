@@ -10,4 +10,5 @@ require 'smartcore/responses/user_profile_responses/user_profile_oauth_url_respo
 require 'smartcore/responses/user_profile_responses/user_profiles_response'
 require 'smartcore/responses/user_profile_responses/user_profile_delete_response'
 require 'smartcore/responses/user_profile_responses/user_profile_delete_list_response'
+require 'smartcore/responses/user_profile_responses/user_profile_password_set_response'
 require 'smartcore/responses/profile_validation_responses/document_scan_list_response'

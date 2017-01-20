@@ -1,5 +1,5 @@
 module Smartcore
-  class UserProfileDeleteRequest < BaseRequest
+  class UserProfileDeleteRequest < TokenRequest
 
     attribute :user_token, String
 

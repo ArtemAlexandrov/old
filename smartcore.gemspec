@@ -34,4 +34,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "virtus", "~> 1.0"
   spec.add_development_dependency "rails", "~> 4.2.6"
   spec.add_development_dependency "faraday", "~> 0.9"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "faker"
 end

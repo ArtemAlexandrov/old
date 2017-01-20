@@ -1,5 +1,5 @@
 module Smartcore
-  class UserProfileDeleteListRequest < BaseRequest
+  class UserProfileDeleteListRequest < TokenRequest
 
     attribute :page,     Integer, default: 1
     attribute :per_page, Integer, default: 20

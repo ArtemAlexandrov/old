@@ -1,5 +1,5 @@
 module Smartcore
-  class DocumentScanListRequest < BaseRequest
+  class DocumentScanListRequest < TokenRequest
 
     attribute :limit,  Integer, default: 20
     attribute :offset, Integer, default: 0

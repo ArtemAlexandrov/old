@@ -1,5 +1,5 @@
 module Smartcore
-  class DocumentScanUploadRequest < BaseRequest
+  class DocumentScanUploadRequest < TokenRequest
 
     attribute :user_token, String
     attribute :document_scan, String

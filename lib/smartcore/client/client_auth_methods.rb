@@ -1,8 +1,13 @@
 module Smartcore
   class Client
 
+    def initialize(options)
+      super(options)
+      request_token
+    end
+
     def sign_in(login, password)
-      Smartcore::ClientSignInRequest.new(login: login, password: password).execute
+      self.token = Smartcore::ClientSignInRequest.new(login: login, password: password).execute
     end
 
     def sign_out(token)

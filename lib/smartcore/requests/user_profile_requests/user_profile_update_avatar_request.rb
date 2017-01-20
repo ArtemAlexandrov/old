@@ -1,5 +1,5 @@
 module Smartcore
-  class UserProfileUpdateAvatarRequest < BaseRequest
+  class UserProfileUpdateAvatarRequest < TokenRequest
 
     attribute :user_token, String
     attribute :avatar,     String

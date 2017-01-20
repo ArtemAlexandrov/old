@@ -22,10 +22,6 @@ module Smartcore
       Smartcore::Router.new
     end
 
-    def token
-      Smartcore::Client.new.request_token
-    end
-
     def success_status
       200
     end
@@ -44,7 +40,7 @@ module Smartcore
 
       conn = Faraday.new(url: uri) do |f|
         f.ssl.verify = false
-        f.response :logger                  # log requests to STDOUT
+        # f.response :logger                  # log requests to STDOUT
         f.adapter  Faraday.default_adapter  # make requests with Net::HTTP
       end
 
@@ -69,7 +65,7 @@ module Smartcore
         # HTTP unauthorized -> API client is not authorized.
       elsif response.status == 401
         # so, if we have any client token in cache,
-        if Rails.cache.exist?(:api_token)
+        if false && Rails.cache.exist?(:api_token)
           # we should delete it
           Rails.cache.delete(:api_token)
           raise Smartcore::ApiClientInvalidToken
@@ -92,15 +88,5 @@ module Smartcore
       raise Smartcore::BadResponseFormat
     end
 
-    def post_json_with_token(path: nil, data: {})
-      retry_count = 0
-      begin
-        response = post_json(path: path, data: data.reverse_merge(api_token: token))
-        process_error(response) unless response.status == 200
-        response
-      rescue Smartcore::ApiClientInvalidToken
-        retry if (retry_count += 1) < 3
-      end
-    end
   end
 end

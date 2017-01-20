@@ -1,5 +1,5 @@
 module Smartcore
-  class UserProfileOAuthSignInRequest < BaseRequest
+  class UserProfileOAuthSignInRequest < TokenRequest
 
     attribute :callback_url,      String
     attribute :confirm_email_url, String, default: ''
@@ -16,7 +16,7 @@ module Smartcore
     end
 
     def path
-      router.user_sign_in_path
+      router.user_oauth_sign_in_path
     end
   end
 end

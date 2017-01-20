@@ -1,5 +1,5 @@
 module Smartcore
-  class UserProfileSignOutRequest < BaseRequest
+  class UserProfileSignOutRequest < TokenRequest
 
     attribute :user_token,    String
 

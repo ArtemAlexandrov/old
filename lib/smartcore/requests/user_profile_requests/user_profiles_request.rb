@@ -1,5 +1,5 @@
 module Smartcore
-  class UserProfilesRequest < BaseRequest
+  class UserProfilesRequest < TokenRequest
 
     attribute :limit, String
     attribute :offset, String

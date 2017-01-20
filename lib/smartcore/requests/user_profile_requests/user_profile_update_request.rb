@@ -1,5 +1,5 @@
 module Smartcore
-  class UserProfileUpdateRequest < BaseRequest
+  class UserProfileUpdateRequest < TokenRequest
 
     attribute :user_token, String
     include Smartcore::UserData

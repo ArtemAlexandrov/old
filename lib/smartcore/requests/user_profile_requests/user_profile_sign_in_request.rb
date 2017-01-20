@@ -1,5 +1,5 @@
 module Smartcore
-  class UserProfileSignInRequest < BaseRequest
+  class UserProfileSignInRequest < TokenRequest
 
     attribute :email,    String
     attribute :password, String

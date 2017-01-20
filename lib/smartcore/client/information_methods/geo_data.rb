@@ -9,7 +9,11 @@ module Smartcore
       Smartcore::GetCountriesRequest.new.execute
     end
 
-    def countries_with_relations_list(country_id = nil)
+    def countries_with_relations_list
+      Smartcore::GetCountriesWithRelationsRequest.new.execute
+    end
+
+    def country_with_relations_list(country_id)
       Smartcore::GetCountriesWithRelationsRequest.new(country_id: country_id).execute
     end
 
