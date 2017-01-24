@@ -6,7 +6,7 @@ module Smartcore
     def execute
       response = execute_request_with_token
       if response.status == success_status
-        UserProfilePasswordSetResponse.new(JSON.parse(response.body))
+        true
       else
         process_error(response)
       end

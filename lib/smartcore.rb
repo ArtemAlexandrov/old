@@ -12,11 +12,19 @@ require 'smartcore/client'
 
 module Smartcore
 
+  def self.public_domain
+    'http://smartcore.ggdigital.com'
+  end
+
   def self.domain
     'http://localhost:4000'
   end
 
+  def public_uri
+    "#{public_domain}/api/v1/"
+  end
+
   def self.uri
-    return "#{domain}/api/v1/"
+    "#{domain}/api/v1/"
   end
 end
