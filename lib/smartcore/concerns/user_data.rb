@@ -16,8 +16,6 @@ module Smartcore
 
     attribute :accept_terms,        Boolean
     attribute :avatar,              String
-    attribute :document_scan_id,    String
-    attribute :document_scan,       Smartcore::Models::DocumentScan
 
     attribute :site_data,           Hash
 

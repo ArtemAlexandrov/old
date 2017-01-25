@@ -31,7 +31,7 @@ describe Smartcore::Client do
 
     it 'should return next pack of users on next page' do
       profile_emails = @client.user_profiles(1).profiles.map(&:email)
-      expect(@client.user_profiles(2).profiles.map(&:email)).to not_eq(profile_emails)
+      expect(@client.user_profiles(2).profiles.map(&:email)).to_not eq(profile_emails)
     end
 
     it 'should return users by query' do

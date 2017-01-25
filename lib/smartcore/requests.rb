@@ -25,3 +25,4 @@ require 'smartcore/requests/user_profile_requests/user_profile_password_reset_re
 require 'smartcore/requests/profile_validation_requests/confirm_email_request'
 require 'smartcore/requests/profile_validation_requests/document_scan_list_request'
 require 'smartcore/requests/profile_validation_requests/document_scan_upload_request'
+require 'smartcore/requests/profile_validation_requests/document_scan_complete_verification_request'
