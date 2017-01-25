@@ -4,7 +4,7 @@ describe Smartcore::Client do
   before do
     @client = Smartcore::Client.new(login: 'kent', password: 'Passw0rd12')
     @password = 'qwerty12345'
-    @email = Faker::Internet.email
+    @email = generate_email
     @user_params = {
         first_name: 'test user first name',
         last_name: 'test user last name',

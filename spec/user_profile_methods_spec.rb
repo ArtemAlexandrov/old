@@ -20,7 +20,7 @@ describe Smartcore::Client do
     end
 
     it 'should return user_profiles count equal per page parameter' do
-      per_page = (1..100).to_a.sample
+      per_page = 3
       expect(@client.user_profiles(1,per_page).profiles.count).to eq(per_page)
     end
 
@@ -47,7 +47,7 @@ describe Smartcore::Client do
           first_name: 'test user first name',
           last_name: 'test user last name',
           patronymic: 'test user pathronymic',
-          email: Faker::Internet.email,
+          email: generate_email,
           is_male: true,
           birthday: '1988-01-01',
           accept_terms: true,
@@ -80,7 +80,7 @@ describe Smartcore::Client do
           first_name: 'test user first name',
           last_name: 'test user last name',
           patronymic: 'test user pathronymic',
-          email: Faker::Internet.email,
+          email: generate_email,
           is_male: true,
           birthday: '1988-01-01',
           accept_terms: true,
@@ -107,7 +107,7 @@ describe Smartcore::Client do
           first_name: 'test user first name',
           last_name: 'test user last name',
           patronymic: 'test user pathronymic',
-          email: Faker::Internet.email,
+          email: generate_email,
           is_male: true,
           birthday: '1988-01-01',
           accept_terms: true,
@@ -136,7 +136,7 @@ describe Smartcore::Client do
           first_name: 'test user first name',
           last_name: 'test user last name',
           patronymic: 'test user pathronymic',
-          email: Faker::Internet.email,
+          email: generate_email,
           is_male: true,
           birthday: '1988-01-01',
           accept_terms: true,

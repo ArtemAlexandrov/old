@@ -8,7 +8,7 @@ describe Smartcore::Client do
   context '#user_session_sign_in' do
     before do
       @password = 'qwerty12345'
-      @email = Faker::Internet.email
+      @email = generate_email
       @user_params = {
           first_name: 'test user first name',
           last_name: 'test user last name',
@@ -45,7 +45,7 @@ describe Smartcore::Client do
   context '#user_session_sign_out' do
     before do
       @password = 'qwerty12345'
-      @email = Faker::Internet.email
+      @email = generate_email
       @user_params = {
           first_name: 'test user first name',
           last_name: 'test user last name',

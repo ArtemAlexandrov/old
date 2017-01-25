@@ -4,7 +4,7 @@ describe Smartcore::Client do
   before do
     @client = Smartcore::Client.new(login: 'kent', password: 'Passw0rd12')
     @password = 'qwerty12345'
-    @email = Faker::Internet.email
+    @email = generate_email
     @user_params = {
         first_name: 'test user first name',
         last_name: 'test user last name',
@@ -27,15 +27,6 @@ describe Smartcore::Client do
   context '#upload_document_scan' do
     it 'should return a user profile' do
       expect(@client.upload_document_scan(@user_token,@base64doc).email).to eq(@profile.email)
-    end
-  end
-
-  context '#list_document_scans' do
-    it 'should return array' do
-      expect(@client.list_document_scans.class).to eq(Array)
-    end
-    it 'should return array with document scans' do
-      expect(@client.list_document_scans.first.class).to eq(Smartcore::Models::DocumentScan)
     end
   end
 
@@ -70,5 +61,17 @@ describe Smartcore::Client do
       expect(@client.user_profile(@user_token).verification_state).to eq(:rejected)
     end
   end
+
+  context '#list_document_scans' do
+    it 'should return array' do
+      @client.upload_document_scan(@user_token,@base64doc)
+      expect(@client.list_document_scans.class).to eq(Array)
+    end
+    it 'should return array with document scans' do
+      @client.upload_document_scan(@user_token,@base64doc)
+      expect(@client.list_document_scans.first.class).to eq(Smartcore::Models::DocumentScan)
+    end
+  end
+
 
 end
