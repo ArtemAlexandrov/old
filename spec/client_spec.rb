@@ -21,6 +21,7 @@ describe Smartcore::Client do
       expect { @client.sign_in('wrong_login', 'wrong_password') }.to raise_error(Smartcore::ApiClientNotAuthorized)
     end
   end
+
   context '#sign_out' do
 
     it 'should return true if token valid' do

@@ -51,6 +51,11 @@ describe Smartcore::Client do
       expect(@client.user_session_sign_in(@email, @new_password).profile.class).to eq(Smartcore::Models::User)
       expect(@client.user_session_sign_in(@email, @new_password).profile.email).to eq(@email)
     end
+
+    it 'should disable old password' do
+      @client.user_password_set_confirm(@confirmation_token)
+      expect(@client.user_session_sign_in(@email, @password)).to eq(nil)
+    end
   end
 
   context '#user_password_reset_request' do
@@ -81,6 +86,11 @@ describe Smartcore::Client do
       @client.user_password_reset_confirm(@confirmation_token, @new_password)
       expect(@client.user_session_sign_in(@email, @new_password).profile.class).to eq(Smartcore::Models::User)
       expect(@client.user_session_sign_in(@email, @new_password).profile.email).to eq(@email)
+    end
+
+    it 'should disable old password' do
+      @client.user_password_reset_confirm(@confirmation_token, @new_password)
+      expect(@client.user_session_sign_in(@email, @password)).to eq(nil)
     end
   end
 
