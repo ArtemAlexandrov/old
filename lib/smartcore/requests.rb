@@ -22,4 +22,6 @@ require 'smartcore/requests/user_profile_requests/user_profile_delete_confirm_re
 require 'smartcore/requests/user_profile_requests/user_profile_password_set_request'
 require 'smartcore/requests/user_profile_requests/user_profile_password_set_confirm_request'
 require 'smartcore/requests/user_profile_requests/user_profile_password_reset_request'
+require 'smartcore/requests/profile_validation_requests/confirm_email_request'
+require 'smartcore/requests/profile_validation_requests/document_scan_list_request'
 require 'smartcore/requests/profile_validation_requests/document_scan_upload_request'

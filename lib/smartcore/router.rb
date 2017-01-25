@@ -108,5 +108,9 @@ module Smartcore
       '/delete_profile/confirm'
     end
 
+    def confirm_email_path
+      '/confirm_email'
+    end
+
   end
 end

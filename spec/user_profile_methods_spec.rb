@@ -129,4 +129,32 @@ describe Smartcore::Client do
   context '#user_profile_update_avatar' do
     #   TODO
   end
+
+  context '#user_profile_confirm_email' do
+    before do
+      @user_params = {
+          first_name: 'test user first name',
+          last_name: 'test user last name',
+          patronymic: 'test user pathronymic',
+          email: Faker::Internet.email,
+          is_male: true,
+          birthday: '1988-01-01',
+          accept_terms: true,
+          city_id: @client.cities_list.sample,
+          password: 'qwerty12345'
+      }
+      response = @client.user_profile_registration(@user_params)
+      @profile    = response.profile
+      @email_confirmation_token = response.email_confirmation_token
+    end
+
+    it 'should return a token' do
+      expect(@client.user_profile_confirm_email(@email_confirmation_token).class).to eq(String)
+    end
+
+    it 'should return a valid by token' do
+      token = @client.user_profile_confirm_email(@email_confirmation_token)
+      expect(@client.user_profile(token).email).to eq(@profile.email)
+    end
+  end
 end

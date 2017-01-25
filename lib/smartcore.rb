@@ -8,6 +8,7 @@ require 'smartcore/responses'
 require 'smartcore/router'
 require 'smartcore/requests'
 require 'smartcore/client'
+require 'smartcore/helper'
 
 
 module Smartcore
