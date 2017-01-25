@@ -1,7 +1,7 @@
 module Smartcore
   class Client
 
-    def user_profiles(query = nil, page = 1, per_page = 20)
+    def user_profiles(page = 1, per_page = 20, query = nil)
       Smartcore::UserProfilesRequest.new(api_token: self.token,
                                          custom_query: query,
                                          limit: per_page,

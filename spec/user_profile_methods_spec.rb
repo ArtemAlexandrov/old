@@ -5,7 +5,41 @@ describe Smartcore::Client do
     @client = Smartcore::Client.new(login: 'kent', password: 'Passw0rd12')
   end
 
-  context '#user_profiles' # TODO
+  context '#user_profiles' do
+
+    it 'should return array of user_profiles' do
+      expect(@client.user_profiles.profiles.class).to eq(Array)
+    end
+
+    it 'should return user_profiles' do
+      expect(@client.user_profiles.profiles.first.class).to eq(Smartcore::Models::User)
+    end
+
+    it 'should return total of user_profiles' do
+      expect(@client.user_profiles.total.class).to eq(Fixnum)
+    end
+
+    it 'should return user_profiles count equal per page parameter' do
+      per_page = (1..100).to_a.sample
+      expect(@client.user_profiles(1,per_page).profiles.count).to eq(per_page)
+    end
+
+    it 'should return same user on same request' do
+      profile_emails = @client.user_profiles(1).profiles.map(&:email)
+      expect(@client.user_profiles(1).profiles.map(&:email)).to eq(profile_emails)
+    end
+
+    it 'should return next pack of users on next page' do
+      profile_emails = @client.user_profiles(1).profiles.map(&:email)
+      expect(@client.user_profiles(2).profiles.map(&:email)).to not_eq(profile_emails)
+    end
+
+    it 'should return users by query' do
+      query = 'verification_state=0'
+      expect(@client.user_profiles(1,20,query).profiles.map(&:verification_state)).to all( be == :not_verified)
+    end
+
+  end
 
   context '#user_profile_registration' do
     before do
