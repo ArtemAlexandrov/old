@@ -40,6 +40,10 @@ module Smartcore
       '/users/upload_document_scan'
     end
 
+    def user_upload_signature_path
+      '/users/upload_signature'
+    end
+
     def user_confirm_password_reset_path
       '/users/password_confirm'
     end

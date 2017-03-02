@@ -1,8 +1,8 @@
 module Smartcore
-  class DocumentImageUploadRequest < TokenRequest
+  class UserProfileSignatureUploadRequest < TokenRequest
 
     attribute :user_token, String
-    attribute :document_scan, String
+    attribute :signature, String
 
     def execute
       response = execute_request_with_token
@@ -14,7 +14,7 @@ module Smartcore
     end
 
     def path
-      router.user_upload_document_scan_path
+      router.user_upload_signature_path
     end
   end
 end

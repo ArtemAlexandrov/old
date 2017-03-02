@@ -1,5 +1,5 @@
 module Smartcore
-  class DocumentScanCompleteVerificationRequest < TokenRequest
+  class DocumentImageCompleteVerificationRequest < TokenRequest
 
     attribute :document_scan_id,    String
     attribute :employee_id,         String

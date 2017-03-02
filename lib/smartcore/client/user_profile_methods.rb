@@ -27,5 +27,11 @@ module Smartcore
                                                     avatar: base64doc).execute
     end
 
+    def upload_signature(user_token, base64doc)
+      Smartcore::UserProfileSignatureUploadRequest.new(api_token: self.token,
+                                                       user_token: user_token,
+                                                       signature: base64doc).execute
+    end
+
   end
 end

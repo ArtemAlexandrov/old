@@ -24,6 +24,12 @@ describe Smartcore::Client do
     @base64doc = Smartcore::Helper.convert_file_to_base64(File.dirname(__FILE__) + '/image.jpg')
   end
 
+  context '#upload_signature' do
+    it 'should return a user profile' do
+      expect(@client.upload_signature(@user_token,@base64doc).profile.email).to eq(@profile.email)
+    end
+  end
+
   context '#upload_document_scan' do
     it 'should return a user profile' do
       expect(@client.upload_document_scan(@user_token,@base64doc).profile.email).to eq(@profile.email)
@@ -37,7 +43,7 @@ describe Smartcore::Client do
     end
     it 'should return array with document scans' do
       @client.upload_document_scan(@user_token,@base64doc)
-      expect(@client.list_document_scans.first.class).to eq(Smartcore::Models::DocumentScan)
+      expect(@client.list_document_scans.first.class).to eq(Smartcore::Models::DocumentImage)
     end
   end
 
