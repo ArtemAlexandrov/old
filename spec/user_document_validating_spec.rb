@@ -30,6 +30,17 @@ describe Smartcore::Client do
     end
   end
 
+  context '#list_document_scans' do
+    it 'should return array' do
+      @client.upload_document_scan(@user_token,@base64doc)
+      expect(@client.list_document_scans.class).to eq(Array)
+    end
+    it 'should return array with document scans' do
+      @client.upload_document_scan(@user_token,@base64doc)
+      expect(@client.list_document_scans.first.class).to eq(Smartcore::Models::DocumentScan)
+    end
+  end
+
   context '#confirm_document_scan' do
     it 'should return true when document confirmed' do
       @client.upload_document_scan(@user_token,@base64doc)
@@ -41,7 +52,9 @@ describe Smartcore::Client do
       @client.upload_document_scan(@user_token,@base64doc)
       document_scan = @client.list_document_scans.select {|document_scan| document_scan.profile.id == @profile.id}.first
       expect(@client.user_profile(@user_token).verification_state).to eq(:uploaded_scan)
-      @client.confirm_document_scan(document_scan.id, document_scan.profile.id, 'test text')
+      @client.confirm_document_scan(document_scan.id,
+                                    'admin',
+                                    'test text')
       expect(@client.user_profile(@user_token).verification_state).to eq(:verified)
     end
 
@@ -57,21 +70,9 @@ describe Smartcore::Client do
       @client.upload_document_scan(@user_token,@base64doc)
       document_scan = @client.list_document_scans.select {|document_scan| document_scan.profile.id == @profile.id}.first
       expect(@client.user_profile(@user_token).verification_state).to eq(:uploaded_scan)
-      @client.decline_document_scan(document_scan.id, document_scan.profile.id, 'test text')
+      @client.decline_document_scan(document_scan.id, 'admin', 'test text')
       expect(@client.user_profile(@user_token).verification_state).to eq(:rejected)
     end
   end
-
-  context '#list_document_scans' do
-    it 'should return array' do
-      @client.upload_document_scan(@user_token,@base64doc)
-      expect(@client.list_document_scans.class).to eq(Array)
-    end
-    it 'should return array with document scans' do
-      @client.upload_document_scan(@user_token,@base64doc)
-      expect(@client.list_document_scans.first.class).to eq(Smartcore::Models::DocumentScan)
-    end
-  end
-
 
 end
