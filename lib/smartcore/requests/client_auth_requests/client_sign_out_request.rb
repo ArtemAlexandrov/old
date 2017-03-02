@@ -1,7 +1,7 @@
 module Smartcore
   class ClientSignOutRequest < BaseRequest
 
-    attribute :token,    String
+    attribute :api_token,    String
 
     def execute
       response = execute_request

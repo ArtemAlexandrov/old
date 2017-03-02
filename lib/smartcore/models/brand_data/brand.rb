@@ -4,7 +4,7 @@ module Smartcore
 
       attribute :title,            String
       attribute :picture,          String
-      attribute :cigarette_skus,   Array[Smartcore::Models::CigaretteFormat]
+      attribute :formats,          Array[Smartcore::Models::CigaretteFormat]
 
       def cigarette_formats
         cigarette_skus

@@ -20,13 +20,13 @@ describe Smartcore::Client do
     response = @client.user_profile_registration(@user_params)
     @client.user_profile_confirm_email(response.email_confirmation_token)
     @profile    = response.profile
-    @user_token = response.token
+    @user_token = response.user_token
     @base64doc = Smartcore::Helper.convert_file_to_base64(File.dirname(__FILE__) + '/image.jpg')
   end
 
   context '#upload_document_scan' do
     it 'should return a user profile' do
-      expect(@client.upload_document_scan(@user_token,@base64doc).email).to eq(@profile.email)
+      expect(@client.upload_document_scan(@user_token,@base64doc).profile.email).to eq(@profile.email)
     end
   end
 

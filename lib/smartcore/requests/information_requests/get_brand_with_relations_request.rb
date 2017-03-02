@@ -1,10 +1,11 @@
 module Smartcore
-  class GetBrandsWithRelationsRequest < BaseRequest
-    attribute :include_relations, Boolean, default: true
+  class GetBrandWithRelationsRequest < BaseRequest
+    attribute :id, String
+
     def execute
       response = execute_request
       if response.status == success_status
-        Smartcore::BrandsResponse.new(JSON.parse(response.body)).brands
+        Smartcore::BrandResponse.new(JSON.parse(response.body)).brand
       else
         process_error(response)
       end

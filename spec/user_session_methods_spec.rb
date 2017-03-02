@@ -23,11 +23,11 @@ describe Smartcore::Client do
 
       response = @client.user_profile_registration(@user_params)
       @profile    = response.profile
-      @user_token = response.token
+      @user_token = response.user_token
     end
 
     it 'should return auth token' do
-      expect(@client.user_session_sign_in(@email, @password).token.class).to eq(String)
+      expect(@client.user_session_sign_in(@email, @password).user_token.class).to eq(String)
     end
 
     it 'should return profile data' do
@@ -60,7 +60,7 @@ describe Smartcore::Client do
 
       response = @client.user_profile_registration(@user_params)
       @profile    = response.profile
-      @user_token = response.token
+      @user_token = response.user_token
     end
     it 'should return ok' do
       expect(@client.user_session_sign_out(@user_token)).to eq(true)

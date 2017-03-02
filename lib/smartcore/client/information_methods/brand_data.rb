@@ -6,7 +6,7 @@ module Smartcore
     end
 
     def brand_with_relations(brand_id = nil)
-      GetBrandsWithRelationsRequest.new(brand_id: brand_id).execute.first
+      GetBrandWithRelationsRequest.new(id: brand_id).execute
     end
 
     def brands_with_relations_list

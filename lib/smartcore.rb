@@ -18,7 +18,7 @@ module Smartcore
   end
 
   def self.domain
-    'http://localhost:4000'
+    'http://localhost:3000'
   end
 
   def public_uri
@@ -26,6 +26,6 @@ module Smartcore
   end
 
   def self.uri
-    "#{domain}/api/v1/"
+    "#{domain}"
   end
 end

@@ -2,7 +2,7 @@ module Smartcore
   class UserProfilePasswordResetRequest < TokenRequest
 
     attribute :confirmation_token,    String
-    attribute :password,              String
+    attribute :new_password,              String
 
     def execute
       response = execute_request_with_token
@@ -14,7 +14,7 @@ module Smartcore
     end
 
     def path
-      router.user_password_reset_path
+      router.user_confirm_password_reset_path
     end
   end
 end

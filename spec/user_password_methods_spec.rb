@@ -19,7 +19,7 @@ describe Smartcore::Client do
 
     response = @client.user_profile_registration(@user_params)
     @profile    = response.profile
-    @user_token = response.token
+    @user_token = response.user_token
   end
 
   context '#user_password_set_request' do

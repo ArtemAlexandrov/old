@@ -11,7 +11,7 @@ module Smartcore
     end
 
     def sign_out(token)
-      Smartcore::ClientSignOutRequest.new(token: token).execute
+      Smartcore::ClientSignOutRequest.new(api_token: token).execute
     end
 
     def request_token

@@ -14,7 +14,7 @@ module Smartcore
     end
 
     def path
-      router.user_request_password_reset_path
+      router.user_password_reset_path
     end
   end
 end

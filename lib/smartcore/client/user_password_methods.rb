@@ -21,7 +21,7 @@ module Smartcore
     def user_password_reset_confirm(token, new_password)
       Smartcore::UserProfilePasswordResetRequest.new(api_token: self.token,
                                                      confirmation_token: token,
-                                                     password: new_password).execute
+                                                     new_password: new_password).execute
     end
 
   end

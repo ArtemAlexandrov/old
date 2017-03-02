@@ -2,7 +2,7 @@ module Smartcore
   class GetCountriesWithRelationsRequest < BaseRequest
 
     attribute :country_id,    String
-
+    attribute :include_relations, Boolean, default: true
     def execute
       response = execute_request
       if response.status == success_status
@@ -13,7 +13,7 @@ module Smartcore
     end
 
     def path
-      router.information_countries_with_relations_path
+      router.information_countries_path
     end
   end
 end

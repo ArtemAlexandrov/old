@@ -21,7 +21,8 @@ describe Smartcore::Client do
       expect(@client.brand_with_relations(brand_id).class).to eq(Smartcore::Models::Brand)
     end
     it 'should brand with cigarette formats' do
-      expect(@client.brand_with_relations.cigarette_formats.first.class).to eq(Smartcore::Models::CigaretteFormat)
+      brand_id = @client.brands_list.first.id
+      expect(@client.brand_with_relations(brand_id).formats.first.class).to eq(Smartcore::Models::CigaretteFormat)
     end
   end
 
@@ -32,6 +33,9 @@ describe Smartcore::Client do
 
     it 'should return array of brands' do
       expect(@client.brands_with_relations_list.first.class).to eq(Smartcore::Models::Brand)
+    end
+    it 'should return array of brands with relations' do
+      expect(@client.brands_with_relations_list.first.formats.first.class).to eq(Smartcore::Models::CigaretteFormat)
     end
   end
 

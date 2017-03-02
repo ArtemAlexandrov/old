@@ -61,7 +61,7 @@ describe Smartcore::Client do
     end
 
     it 'should return user auth token' do
-      expect(@client.user_profile_registration(@user_params).token.class).to eq(String)
+      expect(@client.user_profile_registration(@user_params).user_token.class).to eq(String)
     end
 
     it 'should return email confirmation token' do
@@ -89,7 +89,7 @@ describe Smartcore::Client do
       }
       response = @client.user_profile_registration(@user_params)
       @profile    = response.profile
-      @user_token = response.token
+      @user_token = response.user_token
     end
 
     it 'should return user profile data' do
@@ -116,7 +116,7 @@ describe Smartcore::Client do
       }
       response = @client.user_profile_registration(@user_params)
       @profile    = response.profile
-      @user_token = response.token
+      @user_token = response.user_token
     end
 
     it 'should return updated user profile' do
@@ -148,12 +148,12 @@ describe Smartcore::Client do
       @email_confirmation_token = response.email_confirmation_token
     end
 
-    it 'should return a token' do
-      expect(@client.user_profile_confirm_email(@email_confirmation_token).class).to eq(String)
+    it 'should return a user profile' do
+      expect(@client.user_profile_confirm_email(@email_confirmation_token).user_token.class).to eq(String)
     end
 
     it 'should return a valid by token' do
-      token = @client.user_profile_confirm_email(@email_confirmation_token)
+      token = @client.user_profile_confirm_email(@email_confirmation_token).user_token
       expect(@client.user_profile(token).email).to eq(@profile.email)
     end
   end
