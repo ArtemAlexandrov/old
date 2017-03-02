@@ -130,6 +130,28 @@ describe Smartcore::Client do
     #   TODO
   end
 
+  context '#staff_verification' do
+    before do
+      @user_params = {
+          first_name: 'test user first name',
+          last_name: 'test user last name',
+          patronymic: 'test user pathronymic',
+          email: generate_email,
+          is_male: true,
+          birthday: '1988-01-01',
+          accept_terms: true,
+          city_id: @client.cities_list.sample,
+          password: 'qwerty12345'
+      }
+      response = @client.user_profile_registration(@user_params)
+      @profile    = response.profile
+    end
+
+    it 'success' do
+      expect(@client.staff_verification(@profile.id, 'verified')).to be_truthy
+    end
+  end
+
   context '#user_profile_confirm_email' do
     before do
       @user_params = {

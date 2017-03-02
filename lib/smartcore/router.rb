@@ -77,7 +77,6 @@ module Smartcore
       '/brands'
     end
 
-
     def information_check_email_path
       '/unility/check_email_presence'
     end
@@ -108,6 +107,10 @@ module Smartcore
 
     def confirm_email_path
       '/users/confirm_email'
+    end
+
+    def staff_verification_path
+      '/staff_verification'
     end
 
   end
