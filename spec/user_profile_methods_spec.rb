@@ -34,11 +34,6 @@ describe Smartcore::Client do
       expect(@client.user_profiles(2).profiles.map(&:email)).to_not eq(profile_emails)
     end
 
-    it 'should return users by query' do
-      query = 'verification_state=0'
-      expect(@client.user_profiles(1,20,query).profiles.map(&:verification_state)).to all( be == :not_verified)
-    end
-
   end
 
   context '#user_profile_registration' do

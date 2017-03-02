@@ -1,10 +1,8 @@
 module Smartcore
   class UserProfilesRequest < TokenRequest
 
-    attribute :limit, String
-    attribute :offset, String
-    attribute :custom_query, String
-
+    attribute :page,         Integer
+    attribute :per_page,     Integer
 
     def execute
       response = execute_request_with_token
