@@ -33,5 +33,12 @@ module Smartcore
                                                        signature: base64doc).execute
     end
 
+    def user_profile_set_mark(user_token, key, value)
+      Smartcore::UserProfileSetMarkRequest.new(api_token: self.token,
+                                               user_token: user_token,
+                                               key: key,
+                                               value: value).execute
+    end
+
   end
 end

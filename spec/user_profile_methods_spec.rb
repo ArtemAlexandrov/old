@@ -157,4 +157,32 @@ describe Smartcore::Client do
       expect(@client.user_profile(token).email).to eq(@profile.email)
     end
   end
+  context '#user_profile_set_mark' do
+    before do
+      @user_params = {
+          first_name: 'test user first name',
+          last_name: 'test user last name',
+          patronymic: 'test user pathronymic',
+          email: generate_email,
+          is_male: true,
+          birthday: '1988-01-01',
+          accept_terms: true,
+          city_id: @client.cities_list.sample,
+          password: 'qwerty12345'
+      }
+      response = @client.user_profile_registration(@user_params)
+      @profile    = response.profile
+      @user_token = response.user_token
+    end
+
+    it 'return true when success' do
+      expect(@client.user_profile_set_mark(@user_token, 'mark', 123)).to be_truthy
+    end
+
+    it 'add mark to profile' do
+      @client.user_profile_set_mark(@user_token, 'mark', 123)
+      expect(@client.user_profile(@user_token).marks.count).to eq(1)
+      expect(@client.user_profile(@user_token).marks['mark']).to eq('123')
+    end
+  end
 end

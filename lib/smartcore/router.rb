@@ -94,6 +94,10 @@ module Smartcore
       '/delete_profile/create_request'
     end
 
+    def set_mark_path
+      '/users/set_mark'
+    end
+
     def delete_profile_requests_list_path
       '/delete_profile/list'
     end

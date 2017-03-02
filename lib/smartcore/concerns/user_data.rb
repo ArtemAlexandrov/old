@@ -34,6 +34,7 @@ module Smartcore
 
     attribute :street,              String
     attribute :postcode,            String
+    attribute :marks,               Hash
 
     attribute :client,              Smartcore::Models::Client
   end
