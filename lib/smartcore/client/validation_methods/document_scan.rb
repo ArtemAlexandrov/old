@@ -13,6 +13,12 @@ module Smartcore
                                              limit: per_page).execute
     end
 
+    def list_signatures(page = 1, per_page = 20)
+      Smartcore::SignatureImageListRequest.new(api_token: self.token,
+                                              offset: ((page - 1) * per_page),
+                                              limit: per_page).execute
+    end
+
     def confirm_document_scan(document_scan_id, employee_id, comment)
       verify_document_scan(document_scan_id, employee_id, comment, true)
     end

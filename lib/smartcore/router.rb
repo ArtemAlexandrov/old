@@ -93,6 +93,10 @@ module Smartcore
       '/document_scans'
     end
 
+    def signature_list_path
+      '/sessions/signatures'
+    end
+
     def document_scans_complete_verification_path
       '/document_scans/complete_verification'
     end
