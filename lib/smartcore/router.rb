@@ -12,6 +12,10 @@ module Smartcore
       '/sessions/get_users'
     end
 
+    def social_profiles_path
+      '/sessions/social_profiles'
+    end
+
     def batch_register_path
       '/session/batch_register'
     end
@@ -38,6 +42,10 @@ module Smartcore
 
     def user_upload_document_scan_path
       '/users/upload_document_scan'
+    end
+
+    def upload_social_screen_path
+      '/sessions/upload_social_screen'
     end
 
     def user_upload_signature_path
