@@ -14,11 +14,11 @@ require 'smartcore/helper'
 module Smartcore
 
   def self.public_domain
-    'http://smartcore.ggdigital.com'
+    'http://smartcore.ggdigital.com/api/v1'
   end
 
   def self.domain
-    'http://localhost:3000'
+    'http://localhost:3000/api/v1'
   end
 
   def public_uri
