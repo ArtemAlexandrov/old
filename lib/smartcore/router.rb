@@ -65,7 +65,7 @@ module Smartcore
     end
 
     def user_oauth_sign_in_path
-      '/sessions/oauth_signin'
+      '/sessions/oauth_sign_in'
     end
 
     def user_log_active_time_path

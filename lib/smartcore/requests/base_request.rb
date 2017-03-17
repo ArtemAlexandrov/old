@@ -78,8 +78,9 @@ module Smartcore
         # HTTP not found
         # HTTP locked
         # -> we should do nothing and pass cause this error should be handled in children classes
-      elsif response.status.in? [304, 404, 423]
-
+      elsif response.status == 404
+        raise Smartcore::NotFoundError
+      elsif response.status.in? [304, 423]
         # any other codes are not used in standard cases
       else
         raise Smartcore::BadResponseError

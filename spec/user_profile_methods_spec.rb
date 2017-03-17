@@ -5,6 +5,18 @@ describe Smartcore::Client do
     @client = Smartcore::Client.new(login: 'kent', password: 'Passw0rd12')
   end
 
+  context '#user_profile_by_id' do
+    it 'return user profile' do
+      profile_id = @client.user_profiles.profiles.first.id
+      expect(@client.user_profile_by_id(profile_id).class).to eq(Smartcore::Models::User)
+      expect(@client.user_profile_by_id(profile_id).id).to eq(profile_id)
+    end
+
+    it 'return error if user not exist' do
+      expect { @client.user_profile_by_id('qwerty') }.to raise_error(Smartcore::NotFoundError)
+    end
+  end
+
   context '#user_profiles' do
 
     it 'should return array of user_profiles' do
