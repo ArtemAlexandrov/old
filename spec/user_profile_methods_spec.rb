@@ -214,4 +214,34 @@ describe Smartcore::Client do
       expect(@client.user_profile(@user_token).marks['mark']).to eq('123')
     end
   end
+
+  context '#users_activities' do
+    it 'return Array[UserActivity]' do
+      expect(@client.users_activities.class).to eq(Array)
+      expect(@client.users_activities.first.class).to eq(Smartcore::Models::UserActivity)
+    end
+    it 'return Array[UserActivity] of profile by profile_id' do
+      profile_id = @client.users_activities(1,1).first.profile_id
+      expect(@client.users_activities(profile_id: profile_id).map(&:profile_id).uniq.count).to eq(1)
+    end
+    it 'return Array[UserActivity] of chosen type' do
+      type = @client.users_activities(1,1).first.type
+      expect(@client.users_activities(type: type).map(&:type).uniq.count).to eq(1)
+    end
+
+    it 'should return total count equal per page parameter' do
+      per_page = 3
+      expect(@client.users_activities(1,per_page).count).to eq(per_page)
+    end
+
+    it 'should return same user on same request' do
+      activities_data = @client.users_activities(1).map(&:data)
+      expect(@client.users_activities(1).map(&:data)).to eq(activities_data)
+    end
+
+    it 'should return next pack of users on next page' do
+      activities_data = @client.users_activities(1).map(&:data)
+      expect(@client.users_activities(2).map(&:data)).to_not eq(activities_data)
+    end
+  end
 end

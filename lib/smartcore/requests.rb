@@ -9,6 +9,7 @@ require 'smartcore/requests/information_requests/get_countries_with_relations_re
 require 'smartcore/requests/information_requests/get_brands_request'
 require 'smartcore/requests/information_requests/get_brands_with_relations_request'
 require 'smartcore/requests/information_requests/get_brand_with_relations_request'
+require 'smartcore/requests/user_profile_requests/user_profile_activities_request'
 require 'smartcore/requests/user_profile_requests/user_profile_registration_request'
 require 'smartcore/requests/user_profile_requests/user_profile_sign_in_request'
 require 'smartcore/requests/user_profile_requests/user_profile_sign_out_request'

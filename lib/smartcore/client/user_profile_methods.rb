@@ -1,6 +1,14 @@
 module Smartcore
   class Client
 
+    def users_activities(page = 1, per_page = 20, profile_id: nil, type: nil)
+      Smartcore::UserActivitiesRequest.new(api_token: self.token,
+                                           page: page,
+                                           per_page: per_page,
+                                           profile_id: profile_id,
+                                           type: type).execute
+    end
+
     def user_profile_by_id(profile_id)
       Smartcore::UserProfilesRequest.new(api_token: self.token,
                                          profile_id: profile_id).execute

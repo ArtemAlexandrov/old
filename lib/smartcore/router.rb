@@ -124,6 +124,8 @@ module Smartcore
     def staff_verification_path
       '/staff_verification'
     end
-
+    def user_activities_path
+      '/sessions/users_activities'
+    end
   end
 end
