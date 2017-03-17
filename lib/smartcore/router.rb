@@ -25,7 +25,7 @@ module Smartcore
     end
 
     def user_update_path
-      '/users/update'
+      '/user/update'
     end
 
     def user_upload_avatar_path
@@ -41,7 +41,7 @@ module Smartcore
     end
 
     def user_upload_document_scan_path
-      '/users/upload_document_scan'
+      '/user/upload_document_scan'
     end
 
     def upload_social_screen_path
@@ -49,19 +49,19 @@ module Smartcore
     end
 
     def user_upload_signature_path
-      '/users/upload_signature'
+      '/user/upload_signature'
     end
 
     def user_confirm_password_reset_path
-      '/users/password_confirm'
+      '/user/password_confirm'
     end
 
     def user_password_reset_path
-      '/users/password_reset'
+      '/user/password_reset'
     end
 
     def user_profile_path
-      '/users/profile'
+      '/user/profile'
     end
 
     def user_oauth_sign_in_path
@@ -106,7 +106,7 @@ module Smartcore
     end
 
     def set_mark_path
-      '/users/set_mark'
+      '/user/set_mark'
     end
 
     def delete_profile_requests_list_path
@@ -118,7 +118,7 @@ module Smartcore
     end
 
     def confirm_email_path
-      '/users/confirm_email'
+      '/user/confirm_email'
     end
 
     def staff_verification_path

@@ -17,7 +17,8 @@ module Smartcore
     end
 
     def user_profile_update(user_token, user_params)
-      Smartcore::UserProfileUpdateRequest.new(user_params.merge(user_token: user_token, api_token: self.token)).execute
+      Smartcore::UserProfileUpdateRequest.new(user_params.merge(user_token: user_token,
+                                                                api_token: self.token)).execute
     end
 
     def user_profile_update_avatar(user_token, base64doc)
