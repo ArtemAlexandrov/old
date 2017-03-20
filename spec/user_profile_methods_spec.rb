@@ -135,6 +135,7 @@ describe Smartcore::Client do
     it 'should can update user subscribes' do
       expect(@client.user_profile_update(@user_token, {subscribed: true}).subscribed).to be_truthy
       expect(@client.user_profile_update(@user_token, {subscribed: false}).subscribed).to be_falsey
+      expect(@client.user_profile_update(@user_token, {subscribed: false}).first_name).to eq(@profile.first_name)
     end
   end
 
