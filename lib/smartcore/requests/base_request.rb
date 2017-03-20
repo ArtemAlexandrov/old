@@ -40,7 +40,7 @@ module Smartcore
 
       conn = Faraday.new(url: uri) do |f|
         f.ssl.verify = false
-        # f.response :logger                  # log requests to STDOUT
+        f.response :logger                  # log requests to STDOUT
         f.adapter  Faraday.default_adapter  # make requests with Net::HTTP
       end
 
