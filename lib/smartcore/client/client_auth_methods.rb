@@ -7,15 +7,8 @@ module Smartcore
     end
 
     def sign_in(login, password)
+      Rails.cache.delete(:api_token) if Rails.cache
       self.token = Smartcore::ClientSignInRequest.new(login: login, password: password).execute
-      if Rails.cache
-        if self.token.present?
-          Rails.cache.write(:api_token, self.token)
-        else
-          Rails.cache.delete(:api_token)
-        end
-      end
-      self.token
     end
 
     def sign_out(token)
@@ -23,8 +16,14 @@ module Smartcore
     end
 
     def request_token
-      sign_in(self.login, self.password)
+      if Rails.cache
+        unless Rails.cache.exist?(:api_token)
+          Rails.cache.write(:api_token, sign_in(self.login, self.password))
+        end
+        Rails.cache.read(:api_token, self.token)
+      else
+        sign_in(self.login, self.password)
+      end
     end
-
   end
 end
