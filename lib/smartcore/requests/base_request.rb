@@ -65,7 +65,7 @@ module Smartcore
         # HTTP unauthorized -> API client is not authorized.
       elsif response.status == 401
         # so, if we have any client token in cache,
-        if false && Rails.cache.exist?(:api_token)
+        if Rails.cache && Rails.cache.exist?(:api_token)
           # we should delete it
           Rails.cache.delete(:api_token)
           raise Smartcore::ApiClientInvalidToken
