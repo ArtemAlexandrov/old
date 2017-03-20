@@ -9,7 +9,7 @@ module Smartcore
     attribute :email,               String
     attribute :phone,               String
 
-    attribute :is_male,             Boolean
+    attribute :gender,              String # male|female
     attribute :birthday,            Date
 
     attribute :verification_type,   Symbol
@@ -21,6 +21,7 @@ module Smartcore
     attribute :site_data,           Hash
 
     attribute :valid,               Boolean
+    attribute :subscribed,          Boolean
 
     attribute :preferred_cigarette_brand,     Smartcore::Models::Brand
     attribute :preferred_cigarette_format,    Smartcore::Models::CigaretteFormat

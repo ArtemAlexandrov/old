@@ -16,5 +16,16 @@ module Smartcore
     def path
       router.user_update_path
     end
+
+    def process_error(response)
+      if response.status == 422
+        json = JSON.parse(response.body)
+        if json['error'] == 'validation_error'
+          json
+        else
+          super(response)
+        end
+      end
+    end
   end
 end

@@ -131,6 +131,11 @@ describe Smartcore::Client do
       @user_params[:first_name] = new_name
       expect(@client.user_profile_update(@user_token, @user_params).first_name).to eq(new_name)
     end
+
+    it 'should can update user subscribes' do
+      expect(@client.user_profile_update(@user_token, {subscribed: true}).subscribed).to be_truthy
+      expect(@client.user_profile_update(@user_token, {subscribed: false}).subscribed).to be_falsey
+    end
   end
 
   context '#user_profile_update_avatar' do
