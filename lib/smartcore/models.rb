@@ -9,6 +9,7 @@ require 'smartcore/models/geo_data/country'
 
 
 
+require 'smartcore/models/user_data/oauth_credentail'
 require 'smartcore/concerns/user_data'
 require 'smartcore/models/user_data/user'
 require 'smartcore/models/user_data/user_activity'

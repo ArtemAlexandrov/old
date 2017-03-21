@@ -119,7 +119,9 @@ describe Smartcore::Client do
           birthday: '1988-01-01',
           accept_terms: true,
           city_id: @client.cities_list.sample,
-          password: 'qwerty12345'
+          password: 'qwerty12345',
+          street: 'Маяковская',
+          postcode: '123'
       }
       response = @client.user_profile_registration(@user_params)
       @profile    = response.profile
@@ -130,6 +132,16 @@ describe Smartcore::Client do
       new_name = 'new user name'
       @user_params[:first_name] = new_name
       expect(@client.user_profile_update(@user_token, @user_params).first_name).to eq(new_name)
+    end
+    it 'should return updated user profile' do
+      new_street = 'Невский'
+      @user_params[:street] = new_street
+      expect(@client.user_profile_update(@user_token, @user_params).street).to eq(new_street)
+    end
+    it 'should return updated user profile' do
+      new_postcode = 'Невский'
+      @user_params[:postcode] = new_postcode
+      expect(@client.user_profile_update(@user_token, @user_params).postcode).to eq(new_postcode)
     end
 
     it 'should can update user subscribes' do
