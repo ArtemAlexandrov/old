@@ -1,7 +1,13 @@
 module Smartcore
   class UserProfileUpdateRequest < TokenRequest
 
-    attribute :user_token, String
+    attribute :user_token,                    String
+    attribute :country_id,                    String
+    attribute :city_id,                       String
+    attribute :preferred_cigarette_brand_id,  String
+    attribute :secondary_cigarette_brand_id,  String
+    attribute :preferred_cigarette_format_id, String
+    attribute :secondary_cigarette_format_id, String
     include Smartcore::UserData
 
     def execute
