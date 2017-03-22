@@ -5,8 +5,8 @@ module Smartcore
     class User < BaseModel
       extend ::ActiveModel::Naming
       include Smartcore::UserData
-      def initialize(options)
-        super(options)
+      def initialize(*options)
+        super(*options)
         @errors = ActiveModel::Errors.new(self)
       end
 
