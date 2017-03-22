@@ -25,9 +25,11 @@ module Smartcore
 
     def process_error(response)
       if response.status == 422
-        json = JSON.parse(response.body)
-        if json['error'] == 'validation_error'
-          json
+        response_json = JSON.parse(response.body)
+        if response_json['error'] == 'validation_error'
+          profile = Smartcore::Models::User.new(response_json['profile'])
+          profile.init_errors_by_json(response_json['messages'])
+          profile
         else
           super(response)
         end
