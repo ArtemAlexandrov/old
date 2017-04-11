@@ -1,3 +1,9 @@
 module Smartcore
-  VERSION = "0.1.11"
+
+  MAJOR = 0
+  MINOR = 1
+  TINY  = 12
+  PRE   = nil
+
+  VERSION = [MAJOR, MINOR, TINY, PRE].compact.join('.')
 end
