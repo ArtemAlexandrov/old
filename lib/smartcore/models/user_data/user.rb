@@ -14,6 +14,14 @@ module Smartcore
         "#{first_name} #{last_name}"
       end
 
+      def verified?
+        verification_state == :verified
+      end
+
+      def not_verified?
+        !verified?
+      end
+
       attr_reader :errors
 
       def init_errors_by_json(json)
