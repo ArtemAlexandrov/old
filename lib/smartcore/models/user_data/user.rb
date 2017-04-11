@@ -10,6 +10,10 @@ module Smartcore
         @errors = ActiveModel::Errors.new(self)
       end
 
+      def printable_name
+        "#{first_name} #{last_name}"
+      end
+
       attr_reader :errors
 
       def init_errors_by_json(json)
