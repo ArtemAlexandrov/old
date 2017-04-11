@@ -15,7 +15,7 @@ module Smartcore
       def init_errors_by_json(json)
         json.each do |error_key, error_messages|
           error_messages.each do |message|
-            errors.add(error_key, :invalid, message: message)
+            errors.add error_key, message
           end
         end
       end
