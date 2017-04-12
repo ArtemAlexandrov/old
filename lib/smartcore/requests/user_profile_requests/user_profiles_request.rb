@@ -9,7 +9,7 @@ module Smartcore
       response = execute_request_with_token
       if response.status == success_status
         if profile_id.present?
-          Smartcore::UserProfileResponse.new(JSON.parse(response.body)).profile
+          Smartcore::UserProfileWithDocumentsResponse.new(JSON.parse(response.body))
         else
           Smartcore::UserProfilesResponse.new(JSON.parse(response.body))
         end
