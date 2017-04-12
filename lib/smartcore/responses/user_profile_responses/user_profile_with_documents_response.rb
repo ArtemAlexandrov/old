@@ -1,8 +1,8 @@
 module Smartcore
   class UserProfileWithDocumentsResponse < SuccessResponse
 
-    attribute :profile,                   Smartcore::Models::User
-    attribute :document_images,           Smartcore::Models::DocumentImage
+    attribute :profile,           Smartcore::Models::User
+    attribute :document_images,   Array[Smartcore::Models::DocumentImage]
 
   end
 end
