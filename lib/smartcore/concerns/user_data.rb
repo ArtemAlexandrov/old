@@ -37,5 +37,6 @@ module Smartcore
     attribute :oauth_credentials,   Array[Smartcore::Models::OAuthCredential]
 
     attribute :client,              Smartcore::Models::Client
+    attribute :created_at,          DateTime
   end
 end
