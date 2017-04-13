@@ -17,7 +17,8 @@ module Smartcore
     end
 
     def verify_social_profile(profile_id, employee_id, comment, base64doc, confirmed)
-      Smartcore::SocialScreenUploadRequest.new(profile_id: profile_id,
+      Smartcore::SocialScreenUploadRequest.new(api_token: self.token,
+              profile_id: profile_id,
               social_screen: base64doc,
               state: confirmed ? 'verified' : 'rejected',
               employee_id: employee_id,
