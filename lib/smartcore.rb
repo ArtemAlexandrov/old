@@ -14,14 +14,14 @@ require 'smartcore/helper'
 module Smartcore
 
   def self.public_domain
-    'https://smartcore.ggdigital.com/api/v1'
+    'https://smartcore.ggdigital.ru/api/v1'
   end
 
   def self.domain
     if Rails.env.development?
       'http://localhost:3000/api/v1'
     else
-      'http://10.20.57.110:433/api/v1'
+      'https://10.20.57.110/api/v1'
     end
   end
 
