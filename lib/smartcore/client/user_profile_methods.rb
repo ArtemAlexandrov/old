@@ -14,10 +14,12 @@ module Smartcore
                                          profile_id: profile_id).execute
     end
 
-    def user_profiles(page = 1, per_page = 20)
+    def user_profiles(page = 1, per_page = 20, where_conditions = nil, orders = nil)
       Smartcore::UserProfilesRequest.new(api_token: self.token,
                                          page: page,
-                                         per_page: per_page).execute
+                                         per_page: per_page,
+                                         where: where_conditions,
+                                         order: orders).execute
     end
 
     def user_profile_registration(user_params)

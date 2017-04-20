@@ -4,6 +4,8 @@ module Smartcore
     attribute :page,         Integer
     attribute :per_page,     Integer
     attribute :profile_id,   String
+    attribute :where,        Array[Smartcore::WhereCondition]
+    attribute :order,        Hash
 
     def execute
       response = execute_request_with_token
