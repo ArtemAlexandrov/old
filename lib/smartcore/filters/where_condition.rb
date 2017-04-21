@@ -1,13 +1,11 @@
+require './condition'
 module Smartcore
-class WhereCondition
+class WhereCondition < Condition
 
-  include Virtus.model
 
   AVAILABLE_MATCHERS = %w(equal greater_than less_than like custom)
 
-  attribute :field,         String
-  attribute :matcher,       String
-  attribute :value,         String
+  attribute :value,    String
 
 end
 end

@@ -4,7 +4,7 @@ module Smartcore
     attribute :page,         Integer
     attribute :per_page,     Integer
     attribute :profile_id,   String
-    attribute :where,        Array[Smartcore::WhereCondition]
+    attribute :where,        Array[Smartcore::Condition]
     attribute :order,        Hash
 
     def execute

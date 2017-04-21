@@ -1,13 +1,12 @@
+require './condition'
 module Smartcore
-  class BetweenCondition
+  class BetweenCondition < Condition
 
-    include Virtus.model
 
     AVAILABLE_MATCHERS = %w(between)
 
-    attribute :field,         String
-    attribute :matcher,       String, default: AVAILABLE_MATCHERS[0]
-    attribute :value,         Hash
+    attribute :matcher, String, default: AVAILABLE_MATCHERS[0]
+    attribute :value,   Hash
 
 
     AVAILABLE_MATCHERS.each do |available_matcher|
