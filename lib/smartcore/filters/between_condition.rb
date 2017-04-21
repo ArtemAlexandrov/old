@@ -1,4 +1,3 @@
-require './condition'
 module Smartcore
   class BetweenCondition < Condition
 

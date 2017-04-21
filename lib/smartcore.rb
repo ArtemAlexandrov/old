@@ -1,6 +1,7 @@
 require 'virtus'
 require 'rails'
 
+require 'smartcore/filters/condition'
 require 'smartcore/filters/where_condition'
 require 'smartcore/filters/between_condition'
 require 'smartcore/version'
