@@ -1,5 +1,5 @@
 module Smartcore
-  class UserProfileRegistrationRequest < TokenRequest
+  class UserProfileCreateRequest < TokenRequest
 
     include Smartcore::UserData
     attribute :password, String
@@ -15,7 +15,7 @@ module Smartcore
     end
 
     def path
-      router.user_registration_path
+      router.user_create_path
     end
 
     def process_error(response)

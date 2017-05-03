@@ -31,6 +31,10 @@ module Smartcore
                                         user_token: user_token).execute
     end
 
+    def user_profile_create(user_params)
+      Smartcore::UserProfileCreateRequest.new(user_params.merge(api_token: self.token)).execute
+    end
+
     def user_profile_update(user_token, user_params)
       Smartcore::UserProfileUpdateRequest.new(user_params.merge(user_token: user_token,
                                                                 api_token: self.token)).execute

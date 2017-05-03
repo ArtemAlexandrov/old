@@ -7,13 +7,18 @@ module Smartcore
                                               password: password).execute
     end
 
+    def user_session_force_sign_in(user_profile_id)
+      Smartcore::UserProfileSignInByIdRequest.new(api_token: self.token,
+                                                  profile_id: user_profile_id).execute
+
+    end
+
     def user_session_oauth_sign_in_url(provider, callback_url, failure_url)
       response = Smartcore::UserProfileOAuthSignInRequest.new(api_token: self.token,
                                                               callback_url: callback_url,
                                                               failure_url: failure_url).execute
-      if response && response.success?
-        "#{response.url}?provider=#{provider}"
-      end
+
+      "#{response.url}?provider=#{provider}" if response && response.success?
     end
 
     def user_session_sign_out(user_token)

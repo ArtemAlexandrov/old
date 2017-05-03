@@ -36,8 +36,12 @@ module Smartcore
       '/sessions/sign_out'
     end
 
-    def user_create_path
+    def user_registration_path
       '/sessions/create'
+    end
+
+    def user_create_path
+      '/user/create'
     end
 
     def user_upload_document_scan_path
