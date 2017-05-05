@@ -17,7 +17,7 @@ require 'smartcore/helper'
 module Smartcore
 
   def self.public_domain
-    'https://smartcore.ggdigital.ru/api/v1'
+    'https://smartcore.elementbat.ru/api/v1'
   end
 
   def self.domain
