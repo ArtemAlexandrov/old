@@ -6,10 +6,10 @@ describe Smartcore::Client do
   end
 
   context '#user_profile_by_id' do
-    it 'return user profile' do
+    it 'return responce Smartcore::UserProfileWithDocumentsResponse' do
       profile_id = @client.user_profiles.profiles.first.id
-      expect(@client.user_profile_by_id(profile_id).class).to eq(Smartcore::Models::User)
-      expect(@client.user_profile_by_id(profile_id).id).to eq(profile_id)
+      expect(@client.user_profile_by_id(profile_id).class).to eq(Smartcore::UserProfileWithDocumentsResponse)
+      expect(@client.user_profile_by_id(profile_id).profile.id).to eq(profile_id)
     end
 
     it 'return error if user not exist' do
