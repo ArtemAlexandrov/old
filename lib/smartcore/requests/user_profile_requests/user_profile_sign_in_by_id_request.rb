@@ -1,5 +1,5 @@
 module Smartcore
-  class UserProfileSignInByIpRequest < TokenRequest
+  class UserProfileSignInByIdRequest < TokenRequest
 
     attribute :profile_id, String
 
@@ -13,7 +13,7 @@ module Smartcore
     end
 
     def path
-      router.user_sign_in_path
+      '/sessions/sign_in_by_id'
     end
   end
 end
