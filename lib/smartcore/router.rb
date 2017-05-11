@@ -105,6 +105,10 @@ module Smartcore
       '/document_scans/complete_verification'
     end
 
+    def destroy_profile_request_path
+      '/admin/destroy_user_profile'
+    end
+
     def delete_profile_create_request_path
       '/delete_profile/create_request'
     end
