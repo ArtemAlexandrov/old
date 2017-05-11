@@ -14,7 +14,7 @@ module Smartcore
 
     attribute :verification_state,  Symbol
 
-    attribute :accept_terms_at,     DateTime
+    attribute :accept_term_at,      DateTime
     attribute :avatar_url,          String
 
     attribute :email_confirmed,     Boolean
