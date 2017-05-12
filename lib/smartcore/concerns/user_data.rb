@@ -38,5 +38,6 @@ module Smartcore
 
     attribute :client,              Smartcore::Models::Client
     attribute :created_at,          DateTime
+    attribute :email_confirmation_token,  String
   end
 end
