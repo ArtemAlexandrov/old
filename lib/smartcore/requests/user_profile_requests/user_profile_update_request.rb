@@ -8,6 +8,7 @@ module Smartcore
     attribute :secondary_cigarette_brand_id,  String
     attribute :preferred_cigarette_format_id, String
     attribute :secondary_cigarette_format_id, String
+    attribute :skip_validate,                 Boolean, default: false
     include Smartcore::UserData
 
     def execute
