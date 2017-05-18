@@ -90,7 +90,7 @@ module Smartcore
     end
 
     def information_check_email_path
-      '/unility/check_email_presence'
+      '/sessions/check_email_presence'
     end
 
     def document_scans_list_path
