@@ -3,7 +3,7 @@ module Smartcore
     attribute :email,    String
 
     def execute
-      response = execute_request_with_token
+      response = execute_request
       if response.status == success_status
         true
       elsif response.status == 404
