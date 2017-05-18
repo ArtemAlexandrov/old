@@ -2,7 +2,7 @@ module Smartcore
 
   MAJOR = 0
   MINOR = 1
-  TINY  = 38
+  TINY  = 39
   PRE   = nil
 
   VERSION = [MAJOR, MINOR, TINY, PRE].compact.join('.')
