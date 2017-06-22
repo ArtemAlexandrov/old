@@ -1,6 +1,8 @@
 module Smartcore
   class GetCitiesRequest < BaseRequest
 
+    attribute :per_page, Integer, default: 500
+
     def execute
       response = execute_request
       if response.status == success_status

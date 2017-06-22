@@ -1,6 +1,7 @@
 module Smartcore
   class GetBrandsWithRelationsRequest < BaseRequest
     attribute :include_relations, Boolean, default: true
+    attribute :per_page, Integer, default: 500
     def execute
       response = execute_request
       if response.status == success_status
