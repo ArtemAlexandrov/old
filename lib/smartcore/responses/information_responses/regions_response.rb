@@ -1,5 +1,5 @@
 module Smartcore
-  class CitiesResponse < SuccessResponse
+  class RegionsResponse < SuccessResponse
 
     attribute :regions, Array[Smartcore::Models::Region]
 
