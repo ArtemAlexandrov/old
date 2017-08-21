@@ -80,6 +80,10 @@ module Smartcore
       '/cities'
     end
 
+    def information_regions_path
+      '/regions'
+    end
+
     def information_countries_path
       '/countries'
     end
