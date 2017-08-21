@@ -3,6 +3,7 @@ module Smartcore
 
     attribute :user_token,                    String
     attribute :country_id,                    String
+    attribute :region_id,                     String
     attribute :city_id,                       String
     attribute :preferred_cigarette_brand_id,  String
     attribute :secondary_cigarette_brand_id,  String
