@@ -5,6 +5,7 @@ require 'smartcore/models/brand_data/cigarette_format'
 require 'smartcore/models/brand_data/brand'
 
 require 'smartcore/models/geo_data/city'
+require 'smartcore/models/geo_data/region'
 require 'smartcore/models/geo_data/country'
 
 

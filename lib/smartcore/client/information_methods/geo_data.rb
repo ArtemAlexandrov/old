@@ -5,6 +5,10 @@ module Smartcore
       Smartcore::GetCitiesRequest.new.execute
     end
 
+    def regions_list
+      Smartcore::GetRegionsRequest.new.execute
+    end
+
     def countries_list
       Smartcore::GetCountriesRequest.new.execute
     end
