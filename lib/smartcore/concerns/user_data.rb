@@ -28,6 +28,7 @@ module Smartcore
     attribute :secondary_cigarette_format,    Smartcore::Models::CigaretteFormat
 
     attribute :country,             Smartcore::Models::Country
+    attribute :region,              Smartcore::Models::Region
     attribute :city,                Smartcore::Models::City
 
     attribute :street,              String
