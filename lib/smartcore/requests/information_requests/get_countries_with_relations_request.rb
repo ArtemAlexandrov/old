@@ -1,7 +1,7 @@
 module Smartcore
   class GetCountriesWithRelationsRequest < BaseRequest
 
-    attribute :country_id,    String
+    attribute :id,    String
     attribute :include_relations, Boolean, default: true
     def execute
       response = execute_request
