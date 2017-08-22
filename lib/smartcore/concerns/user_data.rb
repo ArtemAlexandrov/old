@@ -37,7 +37,7 @@ module Smartcore
 
     attribute :oauth_credentials,   Array[Smartcore::Models::OAuthCredential]
 
-    attribute :client,              Smartcore::Models::Client
+    attribute :client,              String
     attribute :created_at,          DateTime
     attribute :email_confirmation_token,  String
   end
