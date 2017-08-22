@@ -79,18 +79,18 @@ describe Smartcore::Client do
 
   context '#country_with_relations_list' do
     before do
-      @country_id = '7c4d5a6f-5191-40aa-99b2-a97d8f0d81ea'
+      @country_id = @client.countries_list.first.id
     end
     it 'should return array' do
-      expect(@client.country_with_relations_list(@country_id).class).to eq(Array)
+      expect(@client.country_with_relations_list(@country_id).class).to eq(Smartcore::Models::Country)
     end
 
     it 'should return array of countries includes cities array' do
-      expect(@client.country_with_relations_list(@country_id).first.cities.class).to eq(Array)
+      expect(@client.country_with_relations_list(@country_id).cities.class).to eq(Array)
     end
 
     it 'should return array of countries includes cities' do
-      expect(@client.country_with_relations_list(@country_id).first.cities.first.class).to eq(Smartcore::Models::City)
+      expect(@client.country_with_relations_list(@country_id).cities.first.class).to eq(Smartcore::Models::City)
     end
   end
 

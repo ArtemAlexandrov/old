@@ -6,7 +6,11 @@ module Smartcore
     def execute
       response = execute_request
       if response.status == success_status
-        Smartcore::CountriesResponse.new(JSON.parse(response.body)).countries
+        if id.blank?
+          Smartcore::CountriesResponse.new(JSON.parse(response.body)).countries
+        else
+          Smartcore::CountryResponse.new(JSON.parse(response.body)).country
+        end
       else
         process_error(response)
       end
