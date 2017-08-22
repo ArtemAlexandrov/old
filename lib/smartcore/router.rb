@@ -29,7 +29,7 @@ module Smartcore
     end
 
     def user_upload_avatar_path
-      '/sessions/upload_avatar'
+      '/user/upload_avatar'
     end
 
     def user_sign_out_path
