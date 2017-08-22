@@ -8,7 +8,11 @@ module Smartcore
     def execute
       response = execute_request
       if response.status == success_status
-        Smartcore::RegionsResponse.new(JSON.parse(response.body)).regions
+        if id.present?
+          Smartcore::RegionResponse.new(JSON.parse(response.body)).region
+        else
+          Smartcore::RegionsResponse.new(JSON.parse(response.body)).regions
+        end
       else
         process_error(response)
       end
