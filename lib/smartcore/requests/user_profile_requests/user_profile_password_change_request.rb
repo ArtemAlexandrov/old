@@ -1,6 +1,7 @@
 module Smartcore
   class UserProfilePasswordChangeRequest < TokenRequest
 
+    attribute :user_token, String
     attribute :old_password, String
     attribute :new_password, String
 
