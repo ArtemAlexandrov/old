@@ -24,5 +24,12 @@ module Smartcore
                                                      new_password: new_password).execute
     end
 
+    def user_password_change(user_token, old_password, new_password)
+      Smartcore::UserProfilePasswordChangeRequest.new(api_token: self.token,
+                                                      user_token: user_token,
+                                                      old_password: old_password,
+                                                      new_password: new_password).execute
+    end
+
   end
 end

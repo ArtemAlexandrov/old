@@ -64,6 +64,10 @@ module Smartcore
       '/user/password_reset'
     end
 
+    def user_password_change_path
+      'user/password_change'
+    end
+
     def user_profile_path
       '/user/profile'
     end

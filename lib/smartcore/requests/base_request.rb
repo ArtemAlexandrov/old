@@ -61,6 +61,8 @@ module Smartcore
             raise Smartcore::BadUserToken
           when 'user_locked'
             raise Smartcore::UserIsLocked
+          when 'old_password_wrong'
+            Smartcore::ErrorResponse.new
         end
         # HTTP unauthorized -> API client is not authorized.
       elsif response.status == 401
