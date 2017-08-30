@@ -66,5 +66,14 @@ module Smartcore
                                                value: value).execute
     end
 
+    def send_user_session_data(user_token, check_in, active_time, url, title)
+      Smartcore::UserProfileSessionRequest.new(api_token: self.token,
+                                               user_token: user_token,
+                                               check_in: check_in,
+                                               active_time: active_time,
+                                               url: url,
+                                               title: title).execute
+    end
+
   end
 end

@@ -33,6 +33,7 @@ require 'smartcore/requests/user_profile_requests/user_profile_password_set_conf
 require 'smartcore/requests/user_profile_requests/user_profile_password_reset_request'
 require 'smartcore/requests/user_profile_requests/user_profile_signature_upload_request'
 require 'smartcore/requests/user_profile_requests/user_profile_set_mark_request'
+require 'smartcore/requests/user_profile_requests/user_profile_session_request'
 require 'smartcore/requests/profile_validation_requests/confirm_email_request'
 require 'smartcore/requests/profile_validation_requests/document_scan_list_request'
 require 'smartcore/requests/profile_validation_requests/signatures_list_request'
@@ -40,3 +41,4 @@ require 'smartcore/requests/profile_validation_requests/social_screen_upload_req
 require 'smartcore/requests/profile_validation_requests/document_scan_upload_request'
 require 'smartcore/requests/profile_validation_requests/document_scan_complete_verification_request'
 require 'smartcore/requests/profile_validation_requests/staff_verification_request'
+
