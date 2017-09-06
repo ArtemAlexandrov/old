@@ -36,6 +36,10 @@ module Smartcore
       '/sessions/sign_out'
     end
 
+    def user_set_register_source_path
+     'sessions/set_register_source'
+    end
+
     def user_registration_path
       '/sessions/create'
     end

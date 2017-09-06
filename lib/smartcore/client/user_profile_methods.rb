@@ -66,5 +66,12 @@ module Smartcore
                                                value: value).execute
     end
 
+    def set_user_register_source(user_id, value)
+      Smartcore::UserProfileSetRegisterSourceRequest.new(api_token: self.token,
+                                                         id: user_id,
+                                                         value: value).execute
+      
+    end
+
   end
 end
