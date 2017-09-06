@@ -60,17 +60,37 @@ module Smartcore
     end
 
     def user_profile_set_mark(user_token, key, value)
-      Smartcore::UserProfileSetMarkRequest.new(api_token: self.token,
-                                               user_token: user_token,
-                                               key: key,
-                                               value: value).execute
+      request = Smartcore::UserProfileSetMarkRequest
+      options = {
+        api_token: self.token,
+        user_token: user_token,
+        key: key,
+        value: value
+      }
+      request.new(options).execute
     end
 
     def set_user_register_source(user_id, value)
-      Smartcore::UserProfileSetRegisterSourceRequest.new(api_token: self.token,
-                                                         id: user_id,
-                                                         value: value).execute
-      
+      request = Smartcore::UserProfileSetRegisterSourceRequest
+      options = {
+        api_token: self.token,
+        id: user_id,
+        value: value
+      }
+      request.new(options).execute
+    end
+          
+    def send_user_session_data(user_token, check_in, active_time, url, title)
+      request = Smartcore::UserProfileSessionRequest
+      options = {
+        api_token: self.token,
+        user_token: user_token,
+        check_in: check_in,
+        active_time: active_time,
+        url: url,
+        title: title
+      }
+      request.new(options).execute
     end
 
   end

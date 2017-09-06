@@ -147,5 +147,9 @@ module Smartcore
     def user_activities_path
       '/sessions/users_activities'
     end
+
+    def user_profile_session_path
+      '/user/session/get_data'
+    end
   end
 end
