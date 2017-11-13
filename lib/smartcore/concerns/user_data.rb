@@ -17,6 +17,7 @@ module Smartcore
     attribute :accept_term_at,      DateTime
     attribute :avatar_url,          String
 
+    attribute :document_uploaded,   Boolean
     attribute :email_confirmed,     Boolean
     attribute :valid,               Boolean
     attribute :subscribed,          Boolean
