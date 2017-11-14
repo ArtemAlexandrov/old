@@ -27,8 +27,9 @@ module Smartcore
                                          order: orders).execute
     end
 
-    def user_profile_registration(user_params)
-      Smartcore::UserProfileRegistrationRequest.new(user_params.merge(api_token: self.token)).execute
+    def user_profile_registration(user_params, skip_validate: false)
+      Smartcore::UserProfileRegistrationRequest.new(user_params.merge(api_token: self.token,
+                                                                      skip_validate: skip_validate)).execute
     end
 
     def user_profile(user_token)

@@ -4,6 +4,7 @@ module Smartcore
     include Smartcore::UserData
     attribute :password, String
     attribute :city_id,  String
+    attribute :skip_validate,  Boolean, default: false
 
     def execute
       response = execute_request_with_token
