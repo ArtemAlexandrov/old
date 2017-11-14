@@ -13,7 +13,7 @@ module Smartcore
     attribute :birthday,            Date
 
     attribute :verification_state,    Symbol
-    # attribute :verification_activiti, Smartcore::Models::UserActivity
+    attribute :verification_activiti, Smartcore::Models::UserActivity
 
     attribute :accept_term_at,      DateTime
     attribute :avatar_url,          String

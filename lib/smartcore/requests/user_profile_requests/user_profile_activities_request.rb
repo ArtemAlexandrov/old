@@ -4,7 +4,7 @@ module Smartcore
     attribute :page,         Integer, default: 1
     attribute :per_page,     Integer, default: 25
     attribute :profile_id,   String
-    attribute :type,         String
+    attribute :type,         Array
 
     def execute
       response = execute_request_with_token
