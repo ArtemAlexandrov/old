@@ -2,6 +2,7 @@ module Smartcore
   class UserProfileSignInByIdRequest < TokenRequest
 
     attribute :profile_id, String
+    attribute :user_ip, String
 
     def execute
       response = execute_request_with_token

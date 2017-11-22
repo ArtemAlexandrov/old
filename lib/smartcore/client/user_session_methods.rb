@@ -1,16 +1,17 @@
 module Smartcore
   class Client
     # Login User Methods
-    def user_session_sign_in(email, password)
+    def user_session_sign_in(email, password, user_ip = nil)
       Smartcore::UserProfileSignInRequest.new(api_token: self.token,
                                               email: email,
-                                              password: password).execute
+                                              password: password,
+                                              user_ip: user_ip).execute
     end
 
-    def user_session_force_sign_in(user_profile_id)
+    def user_session_force_sign_in(user_profile_id, user_ip = nil)
       Smartcore::UserProfileSignInByIdRequest.new(api_token: self.token,
-                                                  profile_id: user_profile_id).execute
-
+                                                  profile_id: user_profile_id,
+                                                  user_ip: user_ip).execute
     end
 
     def user_session_oauth_sign_in_url(provider, callback_url, failure_url)

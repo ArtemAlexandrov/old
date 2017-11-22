@@ -3,6 +3,7 @@ module Smartcore
 
     attribute :email,    String
     attribute :password, String
+    attribute :user_ip, String
 
 
     def execute
