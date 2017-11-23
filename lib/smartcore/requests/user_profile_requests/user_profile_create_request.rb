@@ -4,6 +4,7 @@ module Smartcore
     include Smartcore::UserData
     attribute :password,       String
     attribute :city_id,        String
+    attribute :user_ip,        String
     attribute :skip_validate,  Boolean, default: false
 
     def execute

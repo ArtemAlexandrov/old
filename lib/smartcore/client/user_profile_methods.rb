@@ -37,8 +37,9 @@ module Smartcore
                                         user_token: user_token).execute
     end
 
-    def user_profile_create(user_params, skip_validate: false)
+    def user_profile_create(user_params, skip_validate: false, user_ip: nil)
       Smartcore::UserProfileCreateRequest.new(user_params.merge(api_token: self.token,
+                                                                user_ip: user_ip,
                                                                 skip_validate: skip_validate)).execute
     end
 
