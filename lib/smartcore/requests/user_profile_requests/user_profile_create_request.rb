@@ -1,7 +1,40 @@
 module Smartcore
   class UserProfileCreateRequest < TokenRequest
 
-    include Smartcore::UserData
+    attribute :first_name,          String
+    attribute :last_name,           String
+    attribute :patronymic,          String
+
+    attribute :login,               String
+    attribute :email,               String
+    attribute :phone_number,        String
+
+    attribute :gender,              String # male|female
+    attribute :birthday,            Date
+
+    attribute :accept_term_at,      DateTime
+
+    attribute :email_confirmed,     Boolean
+    attribute :subscribed,          Boolean
+
+    attribute :preferred_cigarette_brand,     Smartcore::Models::Brand
+    attribute :preferred_cigarette_format,    Smartcore::Models::CigaretteFormat
+
+    attribute :secondary_cigarette_brand,     Smartcore::Models::Brand
+    attribute :secondary_cigarette_format,    Smartcore::Models::CigaretteFormat
+
+    attribute :country,             Smartcore::Models::Country
+    attribute :region,              Smartcore::Models::Region
+    attribute :city,                Smartcore::Models::City
+
+    attribute :street,              String
+    attribute :postcode,            String
+    attribute :marks,               Hash
+
+    attribute :client,              String
+    attribute :created_at,          DateTime
+    attribute :email_confirmation_token,  String
+
     attribute :password,       String
     attribute :city_id,        String
     attribute :user_ip,        String
