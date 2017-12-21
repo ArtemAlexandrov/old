@@ -14,6 +14,11 @@ module Smartcore
                                          profile_id: profile_id).execute
     end
 
+    def user_profile_by_email(email)
+      Smartcore::UserProfilesRequest.new(api_token: self.token,
+                                         email: email).execute
+    end
+
     def destroy_user_profile_by_id(profile_id)
       Smartcore::UserProfileDestroyRequest.new(api_token: self.token,
                                                id: profile_id).execute
